@@ -1,0 +1,13 @@
+/* make game id element 450px wide and 450px h*/
+#game {
+    width: 450px;
+    height: 450px;
+}
+
+
+#player-scoreboard{
+    width: 450px;
+}
+
+
+
