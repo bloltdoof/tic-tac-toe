@@ -1,1 +1,1 @@
-// 
+// Gameboard object with module pattern.
