@@ -14,18 +14,37 @@
     <div id="content" class="flex justify-center flex-col items-center h-screen w-screen bg-black">
         <div id="game" class="bg-white m-3">
             <div id="game-board" class="grid overflow-hidden auto-cols-auto auto-row-auto gap-1 h-full w-full">
-                <div class="box row-end-1 col-end-1 h-full w-full bg-black">1</div>
-	            <div class="box row-end-1 col-start-1 col-end-2 h-full w-full bg-black">2</div>
-	            <div class="box row-end-1 col-start-2 col-end-3 h-full w-full bg-black">3</div>
-	            <div class="box row-start-1 row-end-2 col-end-1 h-full w-full bg-black">4</div>
-	            <div class="box row-start-1 row-end-2 col-start-1 col-end-2 h-full w-full bg-black">5</div>
-	            <div class="box row-start-1 row-end-2 col-start-2 col-end-3 h-full w-full bg-black">6</div>
-	            <div class="box row-start-2 row-end-3 col-end-1 h-full w-full bg-black">7</div>
-	            <div class="box row-start-2 row-end-3 col-start-1 col-end-2 h-full w-full bg-black">8</div>
-	            <div class="box row-start-2 row-end-3 col-start-2 col-end-3 h-full w-full bg-black">9</div>
+                <div class="box flex justify-center items-center row-end-1 col-end-1 h-full w-full bg-black">1</div>
+	            <div class="box flex justify-center items-center row-end-1 col-start-1 col-end-2 h-full w-full bg-black">
+                    
+                </div>
+	            <div class="box flex justify-center items-center row-end-1 col-start-2 col-end-3 h-full w-full bg-black">3</div>
+	            <div class="box flex justify-center items-center row-start-1 row-end-2 col-end-1 h-full w-full bg-black">4</div>
+	            <div class="box flex justify-center items-center row-start-1 row-end-2 col-start-1 col-end-2 h-full w-full bg-black">5</div>
+	            <div class="box flex justify-center items-center row-start-1 row-end-2 col-start-2 col-end-3 h-full w-full bg-black">6</div>
+	            <div class="box flex justify-center items-center row-start-2 row-end-3 col-end-1 h-full w-full bg-black">7</div>
+	            <div class="box flex justify-center items-center row-start-2 row-end-3 col-start-1 col-end-2 h-full w-full bg-black">8</div>
+	            <div class="box flex justify-center items-center row-start-2 row-end-3 col-start-2 col-end-3 h-full w-full bg-black">9</div>
             </div>
         </div>
-        <div id="player-scoreboard" class="h-1/6 bg-indigo-700"></div>
+        <div id="player-scoreboard" class="flex justify-center items-center h-1/6">
+            <div  id="player-one-score" class="item flex flex-col justify-evenly items-center w-1/4 h-full bg-black">
+                <h1 class="text-white text-md font-bold "id="player-one">PLAYER(X)</h1>
+                <span id="player-score" class="text-white text-md font-bold ">0</span>
+            </div>
+	        <div id="draw-board" class="item flex flex-col justify-evenly items-center w-1/4 h-full bg-black">
+                <h1 class="text-white text-md font-bold "id="draw">-</h1>
+                <span id="draw-score" class="text-white text-md font-bold ">0</span>
+            </div>
+	        <div id="computer-board" class="item flex flex-col justify-evenly items-center w-1/4 h-full bg-black">
+                <h1 class="text-white text-md font-bold "id="computer">COMPUTER(O)</h1>
+                <span id="computer-score" class="text-white text-md font-bold ">0</span>
+            </div>
+	        <div id="change-opponent" class="item flex flex-col justify-evenly items-center w-1/6 h-full bg-black">
+                <a href="#" id="change-oppenet-text" class="text-white text-md font-bold">Human</a>
+                <span id="number" class="text-white text-md font-bold ">2</span>
+            </div>
+        </div>
     </div>
     
 </body>
