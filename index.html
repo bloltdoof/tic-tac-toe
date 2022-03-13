@@ -14,21 +14,21 @@
     <div id="content" class="flex justify-center flex-col items-center h-screen w-screen bg-black">
         <div id="game" class="bg-white m-3">
             <div id="game-board" class="grid overflow-hidden auto-cols-auto auto-row-auto gap-1 h-full w-full">
-                <div class="box flex justify-center items-center row-end-1 col-end-1 h-full w-full bg-black"></div>
-	            <div class="box flex justify-center items-center row-end-1 col-start-1 col-end-2 h-full w-full bg-black"></div>
-	            <div class="box flex justify-center items-center row-end-1 col-start-2 col-end-3 h-full w-full bg-black"></div>
-	            <div class="box flex justify-center items-center row-start-1 row-end-2 col-end-1 h-full w-full bg-black"></div>
-	            <div class="box flex justify-center items-center row-start-1 row-end-2 col-start-1 col-end-2 h-full w-full bg-black"></div>
-	            <div class="box flex justify-center items-center row-start-1 row-end-2 col-start-2 col-end-3 h-full w-full bg-black"></div>
-	            <div class="box flex justify-center items-center row-start-2 row-end-3 col-end-1 h-full w-full bg-black"></div>
-	            <div class="box flex justify-center items-center row-start-2 row-end-3 col-start-1 col-end-2 h-full w-full bg-black"></div>
-	            <div class="box flex justify-center items-center row-start-2 row-end-3 col-start-2 col-end-3 h-full w-full bg-black"></div>
+                <div class="box flex justify-center items-center row-end-1 col-end-1 bg-black text-white text-7xl font-bold"></div>
+	            <div class="box flex justify-center items-center row-end-1 col-start-1 col-end-2 bg-black text-white text-7xl font-bold">X</div>
+	            <div class="box flex justify-center items-center row-end-1 col-start-2 col-end-3 bg-black text-white text-7xl font-bold"></div>
+	            <div class="box flex justify-center items-center row-start-1 row-end-2 col-end-1 bg-black text-white text-7xl font-bold"></div>
+	            <div class="box flex justify-center items-center row-start-1 row-end-2 col-start-1 col-end-2 bg-black text-white text-7xl font-bold"></div>
+	            <div class="box flex justify-center items-center row-start-1 row-end-2 col-start-2 col-end-3 bg-black text-white text-7xl font-bold"></div>
+	            <div class="box flex justify-center items-center row-start-2 row-end-3 col-end-1 bg-black text-white text-7xl font-bold"></div>
+	            <div class="box flex justify-center items-center row-start-2 row-end-3 col-start-1 col-end-2 bg-black text-white text-7xl font-bold"></div>
+	            <div class="box flex justify-center items-center row-start-2 row-end-3 col-start-2 col-end-3 bg-black text-white text-7xl font-bold"></div>
             </div>
         </div>
         <div id="player-scoreboard" class="flex justify-center items-center h-1/6">
             <div  id="player-one-score" class="item flex flex-col justify-evenly items-center w-1/4 h-full bg-black">
                 <h1 class="text-white text-md font-bold "id="player-one">PLAYER1(X)</h1>
-                <span id="player-score" class="text-white text-md font-bold ">0</span>
+                <span id="player-one-score" class="text-white text-md font-bold ">0</span>
             </div>
 	        <div id="draw-board" class="item flex flex-col justify-evenly items-center w-1/4 h-full bg-black">
                 <h1 class="text-white text-md font-bold "id="draw">-</h1>
@@ -36,7 +36,7 @@
             </div>
 	        <div id="computer-board" class="item flex flex-col justify-evenly items-center w-1/4 h-full bg-black">
                 <h1 class="text-white text-md font-bold "id="computer">PLAYER2(O)</h1>
-                <span id="computer-score" class="text-white text-md font-bold ">0</span>
+                <span id="player-two-score" class="text-white text-md font-bold ">0</span>
             </div>
 	        <!-- <div id="change-opponent" class="item flex flex-col justify-evenly items-center w-1/6 h-full bg-black">
                 <a href="#" id="change-oppenet-text" class="text-white text-md font-bold">Human</a>
