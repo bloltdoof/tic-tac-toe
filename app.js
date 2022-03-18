@@ -153,7 +153,7 @@ let playerX = 0;
 let playerO = 0;
 let draw = 0;
 
-// updateScore : function to update the score of the players from board array. If there is a wind or a tie, the score is updated accordingly.Then reset the board.
+// updateScore : function to update the score of the players from board array.
 const updateScore = () => {
     let winner = gameLogic.checkWinner(gameBoard.getBoard());
     if (winner === 'X') {
