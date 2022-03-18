@@ -1,7 +1,4 @@
-
-
 //gameBoard object of the tic tac toe game with following properties module pattern.
-
 const gameBoard = (function() {
     let board = [
         ['', '', ''],
@@ -9,9 +6,9 @@ const gameBoard = (function() {
         ['', '', '']
     ];
     let currentPlayer = 'X';
-
-
+    
     const boxElements = document.querySelectorAll('.box');
+    
     const changePlayer = () => {
         if (currentPlayer === 'X') {
             currentPlayer = 'O';
@@ -19,7 +16,6 @@ const gameBoard = (function() {
             currentPlayer = 'X';
         }
     };
-
 
     const getCurrentPlayer = () => {
         return currentPlayer;
@@ -42,8 +38,6 @@ const gameBoard = (function() {
         }
         return [rowIndex, colIndex];
     };
-
-
 
     boxElements.forEach(box => {
         box.addEventListener('click', function() {
@@ -83,8 +77,6 @@ const gameBoard = (function() {
     const resetCurrentPlayer = () => {
         currentPlayer = 'X';
     }
-
-
 
     return {
         getBoard,
@@ -140,9 +132,6 @@ const gameLogic = (function() {
         return tie;
     };
 
-
-    
-
     // reset : reset board and current player to default.
     const reset = () => {
         gameBoard.resetBoard();
@@ -150,17 +139,12 @@ const gameLogic = (function() {
         gameBoard.resetBoxElements();
     }
 
-
-
     return {
         checkWinner,
         checkTie,
-        
         reset
-
     };
-}
-)();
+})();
 
 let playerXScore = document.getElementById('player-one-score');
 let playerOScore = document.getElementById('player-two-score');
@@ -168,9 +152,6 @@ let drawScore = document.getElementById('draw-score');
 let playerX = 0;
 let playerO = 0;
 let draw = 0;
-
-
-
 
 // updateScore : function to update the score of the players from board array. If there is a wind or a tie, the score is updated accordingly.Then reset the board.
 const updateScore = () => {
@@ -190,8 +171,6 @@ const updateScore = () => {
     }
     // Recursive call to updateScore function.
     setTimeout(updateScore, 300);
-
-
 
 }
 
