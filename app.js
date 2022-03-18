@@ -70,6 +70,15 @@ const gameBoard = (function() {
             ['', '', '']
         ];
     }
+
+    // resetBoxElements : function to reset the box elements.
+    const resetBoxElements = () => {
+        boxElements.forEach(box => {
+            box.innerHTML = '';
+        });
+    }
+
+
     //Reset current player to X
     const resetCurrentPlayer = () => {
         currentPlayer = 'X';
@@ -81,6 +90,7 @@ const gameBoard = (function() {
         getBoard,
         getCurrentPlayer,
         resetBoard,
+        resetBoxElements,
         resetCurrentPlayer
 
     };
@@ -137,6 +147,7 @@ const gameLogic = (function() {
     const reset = () => {
         gameBoard.resetBoard();
         gameBoard.resetCurrentPlayer();
+        gameBoard.resetBoxElements();
     }
 
 
@@ -154,15 +165,16 @@ const gameLogic = (function() {
 let playerXScore = document.getElementById('player-one-score');
 let playerOScore = document.getElementById('player-two-score');
 let drawScore = document.getElementById('draw-score');
+let playerX = 0;
+let playerO = 0;
+let draw = 0;
 
 
 
 
-// updateScore : function to update the score of the players. If there is a wind or a tie, the score is updated accordingly.Then reset the board.
-const updateScore = (winner) => {
-    let playerX = 0;
-    let playerO = 0;
-    let draw = 0;
+// updateScore : function to update the score of the players from board array. If there is a wind or a tie, the score is updated accordingly.Then reset the board.
+const updateScore = () => {
+    let winner = gameLogic.checkWinner(gameBoard.getBoard());
     if (winner === 'X') {
         playerX++;
         playerXScore.innerHTML = playerX;
@@ -171,14 +183,19 @@ const updateScore = (winner) => {
         playerO++;
         playerOScore.innerHTML = playerO;
         gameLogic.reset();
-    } else {
+    } else if (gameLogic.checkTie(gameBoard.getBoard())) {
         draw++;
         drawScore.innerHTML = draw;
         gameLogic.reset();
     }
-    
+    // Recursive call to updateScore function.
+    setTimeout(updateScore, 500);
+
+
+
 }
 
+updateScore();
 
 
 
