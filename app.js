@@ -49,9 +49,10 @@ const gameBoard = (function() {
         box.addEventListener('click', function() {
             if (box.innerHTML === '') {
                 box.innerHTML = getCurrentPlayer();
-                changePlayer();
+                
                 let index = getIndex(box);
                 setSign(index[0], index[1]);
+                changePlayer();
             }
         });
     });
@@ -89,35 +90,38 @@ const gameBoard = (function() {
 
 //gameLogic object of the tic tac toe game with following properties module pattern.
 const gameLogic = (function() {
-    // checkWinner : function to check the winner of the game.
+    
+    // checkWinner : checks the winner of the board array.
     const checkWinner = (board) => {
         let winner = null;
-
-        let winningCombinations = [
-            [0, 1, 2],
-            [3, 4, 5],
-            [6, 7, 8],
-            [0, 3, 6],
-            [1, 4, 7],
-            [2, 5, 8],
-            [0, 4, 8],
-            [2, 4, 6]
-        ];
-
-        for (let i = 0; i < winningCombinations.length; i++) {
-            let [a, b, c] = winningCombinations[i];
-            if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-                winner = board[a];
+        //check rows
+        for (let i = 0; i < 3; i++) {
+            if (board[i][0] !== '' && board[i][0] === board[i][1] && board[i][0] === board[i][2]) {
+                winner = board[i][0];
             }
+        }
+        //check columns
+        for (let i = 0; i < 3; i++) {
+            if (board[0][i] !== '' && board[0][i] === board[1][i] && board[0][i] === board[2][i]) {
+                winner = board[0][i];
+            }
+        }
+        //check diagonals
+        if (board[0][0] !== '' && board[0][0] === board[1][1] && board[0][0] === board[2][2]) {
+            winner = board[0][0];
+        }
+        if (board[0][2] !== '' && board[0][2] === board[1][1] && board[0][2] === board[2][0]) {
+            winner = board[0][2];
+
         }
         return winner;
     };
 
-    // checkTie : function to check if the game is tie or not.
+    // checkTie : checks board array for tie.
     const checkTie = (board) => {
         let tie = true;
-        for (let i = 0; i < board.length; i++) {
-            for (let j = 0; j < board[i].length; j++) {
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
                 if (board[i][j] === '') {
                     tie = false;
                 }
@@ -126,24 +130,63 @@ const gameLogic = (function() {
         return tie;
     };
 
+
+    
+
+    // reset : reset board and current player to default.
+    const reset = () => {
+        gameBoard.resetBoard();
+        gameBoard.resetCurrentPlayer();
+    }
+
+
+
     return {
         checkWinner,
-        checkTie
+        checkTie,
+        
+        reset
+
     };
 }
 )();
 
+let playerXScore = document.getElementById('player-one-score');
+let playerOScore = document.getElementById('player-two-score');
+let drawScore = document.getElementById('draw-score');
 
-// scoreBoard object of the tic tac toe game with following properties module pattern.
-const scoreBoard = (function() {
-    let playerXScore = document.getElementById('player-one-score');
-    let playerOScore = document.getElementById('player-two-score');
-    let drawScore = document.getElementById('draw-score');
+
+
+
+// updateScore : function to update the score of the players. If there is a wind or a tie, the score is updated accordingly.Then reset the board.
+const updateScore = (winner) => {
     let playerX = 0;
     let playerO = 0;
     let draw = 0;
+    if (winner === 'X') {
+        playerX++;
+        playerXScore.innerHTML = playerX;
+        gameLogic.reset();
+    } else if (winner === 'O') {
+        playerO++;
+        playerOScore.innerHTML = playerO;
+        gameLogic.reset();
+    } else {
+        draw++;
+        drawScore.innerHTML = draw;
+        gameLogic.reset();
+    }
     
-)();
+}
+
+
+
+
+
+
+
+
+
 
 
 
