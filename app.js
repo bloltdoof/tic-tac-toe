@@ -170,7 +170,9 @@ const updateScore = () => {
         gameLogic.reset();
     }
     // Recursive call to updateScore function.
-    setTimeout(updateScore, 300);
+    // timeout variable with time unit of 1000ms.
+    let timeout_ms = 300;
+    setTimeout(updateScore, timeout_ms);
 
 }
 
