@@ -1,6 +1,7 @@
 # tic-tac-toe
 
-### [Live Demo](https://bloltdoof.github.io/tic-tac-toe/)
+### [Live Demo](https://safakeroglu.github.io/tic-tac-toe/
+)
 
 #### 📝 Description
 Vanilla JS Tic Tac Toe project.
